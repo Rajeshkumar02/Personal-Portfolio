@@ -1,0 +1,10 @@
+hr {
+  color: var(--text-200);
+}
+
+.primary_footer {
+  background-color: var(--bg-100);
+}
+.secondary_footer {
+  background-color: var(--bg-100);
+}

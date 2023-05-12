@@ -1,0 +1,41 @@
+.form_input {
+  background-color: var(--bg-200);
+  color: var(--text-100);
+  border-color: var(--text-200);
+}
+
+.form_input::placeholder {
+  color: var(--text-200);
+}
+
+.form_input:focus {
+  border-color: var(--text-200);
+  background-color: var(--bg-300);
+  color: var(--text-100);
+}
+
+.form_btn {
+  background-color: var(--primary-100);
+  color: var(--text-100);
+  border-color: var(--primary-100);
+}
+
+.form_btn:hover {
+  background-color: var(--primary-200);
+  color: var(--text-100);
+  border-color: var(--primary-200);
+}
+.form_btn:not(:disabled):not(:disabled):active {
+  background-color: var(--primary-100);
+  color: var(--text-100);
+  border-color: var(--primary-100);
+}
+
+label {
+  padding-bottom: 10px;
+  padding-top: 13px;
+}
+
+.justify_txt {
+  text-align: justify;
+}

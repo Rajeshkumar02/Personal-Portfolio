@@ -1,0 +1,29 @@
+.navbar_ {
+  background-color: var(--bg-100);
+}
+
+.title_txt {
+  color: var(--text-100);
+}
+
+.nav_link {
+  color: var(--text-200);
+  position: relative;
+  display: inline-block;
+}
+
+.nav_link::after {
+  content: "";
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--text-200);
+  transition: width 0.3s ease;
+}
+
+.nav_link:hover::after {
+  width: 100%;
+  color: var(--text-100);
+}
