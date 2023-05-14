@@ -72,39 +72,41 @@ function Navbar_() {
                   </Link>
                 </li>
 
-                <li className="nav-item">
-                  <Link
-                    className="nav-link"
-                    to="https://www.linkedin.com/in/rajeshkumar2002"
-                  >
-                    <span
-                      style={{ color: "#0077B5", fontSize: "20px" }}
-                      className="bi bi-linkedin"
-                    ></span>
-                  </Link>
-                </li>
-                <li className="nav-item">
-                  <Link
-                    className="nav-link"
-                    to="https://instagram.com/mr.s.i.x_2k2"
-                  >
-                    <span
-                      style={{ color: "#C13584", fontSize: "20px" }}
-                      className="bi bi-instagram"
-                    ></span>
-                  </Link>
-                </li>
-                <li className="nav-item">
-                  <Link
-                    className="nav-link"
-                    to="https://twitter.com/Dev_Rajeshkumar"
-                  >
-                    <span
-                      style={{ color: "#00acee", fontSize: "20px" }}
-                      className="bi bi-twitter"
-                    ></span>
-                  </Link>
-                </li>
+                <div className="d-flex flex-row gap-4">
+                  <li className="nav-item">
+                    <Link
+                      className="nav-link"
+                      to="https://www.linkedin.com/in/rajeshkumar2002"
+                    >
+                      <span
+                        style={{ color: "#0077B5", fontSize: "20px" }}
+                        className="bi bi-linkedin"
+                      ></span>
+                    </Link>
+                  </li>
+                  <li className="nav-item">
+                    <Link
+                      className="nav-link"
+                      to="https://instagram.com/mr.s.i.x_2k2"
+                    >
+                      <span
+                        style={{ color: "#C13584", fontSize: "20px" }}
+                        className="bi bi-instagram"
+                      ></span>
+                    </Link>
+                  </li>
+                  <li className="nav-item">
+                    <Link
+                      className="nav-link"
+                      to="https://twitter.com/Dev_Rajeshkumar"
+                    >
+                      <span
+                        style={{ color: "#00acee", fontSize: "20px" }}
+                        className="bi bi-twitter"
+                      ></span>
+                    </Link>
+                  </li>
+                </div>
               </ul>
             </div>
           </div>

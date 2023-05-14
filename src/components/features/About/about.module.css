@@ -84,3 +84,34 @@ hr {
   list-style-type: disc;
   margin-bottom: 5px;
 }
+
+.image_container {
+  height: 100%;
+  overflow: hidden;
+}
+
+.project_img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 16px;
+}
+
+.custum_card {
+  background-color: var(--bg-200);
+  border-radius: 16px;
+  height: 500px;
+  overflow: scroll;
+}
+
+.link {
+  text-decoration: none;
+  color: var(--text-200);
+}
+.link:hover {
+  color: var(--text-100);
+}
+
+.justify_txt {
+  text-align: justify;
+}

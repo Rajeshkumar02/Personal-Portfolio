@@ -29,7 +29,7 @@ function Home() {
             height: 400,
             width: 1000,
             objectPosition: "center",
-            borderRadius: "20px"
+            borderRadius: "20px",
           }}
           alt="coder"
         />
@@ -39,22 +39,8 @@ function Home() {
         <strong>Innovative Web Developer</strong>
       </p>
       <div className="row d-flex flex-row align-items-center">
-        <div
-          className={
-            "col-md-6 d-flex flex-row justify-content-center fade-right"
-          }
-        >
-          <p className={`fs-5 secondary_txt w-75 ${styles.justify_text}`}>
-            As a web developer, I have worked on various projects using
-            cutting-edge technologies and frameworks. I have experience in
-            frontend development with React.js and React Native, as well as
-            backend development with Flask. I enjoy building responsive
-            interfaces, integrating APIs, and solving complex challenges to
-            create innovative solutions.
-          </p>
-        </div>
-        <div className={"col-md-6 fade-left"}>
-          <div className="d-flex flex-row justify-content-center col-lg-8 col-xl-9">
+        <div className="col-md-6 d-flex flex-row justify-content-end order-md-last">
+          <div className="col-lg-8 col-xl-9">
             <img
               src={coder_gif}
               style={{ borderRadius: 20 }}
@@ -63,13 +49,24 @@ function Home() {
             />
           </div>
         </div>
+        <div className="col-md-6 d-flex flex-row justify-content-start order-md-first">
+          <p className={`fs-5 secondary_txt w-100 ${styles.justify_text}`}>
+            As a web developer, I have worked on various projects using
+            cutting-edge technologies and frameworks. I have experience in
+            frontend development with React.js and React Native, as well as
+            backend development with Flask. I enjoy building responsive
+            interfaces, integrating APIs, and solving complex challenges to
+            create innovative solutions.
+          </p>
+        </div>
       </div>
+
       <hr className="mt-4 " />
       <p className="primary_txt fs-1 mt-4">
         <strong>Explore My Portfolio</strong>
       </p>
       <div className="row d-flex flex-row align-items-center">
-        <div className={"col-md-6 fade-left"}>
+        <div className={"col-md-6"}>
           <div className="d-flex flex-row justify-content-center col-lg-8 col-xl-9">
             <img
               src={Online_gif}
@@ -81,11 +78,9 @@ function Home() {
         </div>
         <div
           style={{ minWidth: 300 }}
-          className={
-            "col-md-6 d-flex flex-row justify-content-center fade-right"
-          }
+          className={"col-md-6 d-flex flex-row justify-content-center"}
         >
-          <span className="w-75">
+          <span className="w-100">
             <p className={`secondary_txt fs-5 ${styles.justify_text}`}>
               Feel free to explore my portfolio, where you will discover
               comprehensive information about my skills, projects, education,

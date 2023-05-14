@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import cards from "./Const";
 import styles from "./blog.module.css";
 
-function Card(props) {
+function Card({ card, id }) {
   const Navigate = useNavigate();
 
   // generate random color
@@ -13,29 +13,22 @@ function Card(props) {
     return colors[randomIndex];
   };
 
-  // create markup for text
-  function createMarkup(text) {
-    const element = document.createElement("span");
-    element.innerHTML = text;
-    return element.textContent;
-  }
-
   return (
     <div className="col mb-4">
       <div className={`card h-100 ${styles.cus_card}`}>
         <div className={styles.image_container}>
           <img
             onClick={() => {
-              Navigate(`/blog/${props.id}`);
+              Navigate(`/blog/${id}`);
             }}
-            src={props.cover}
+            src={card.cover}
             className="card-img-top"
             alt="..."
           />
         </div>
 
         <div className="card-body">
-          {props.labels.map((label, index) => (
+          {card.labels.map((label, index) => (
             <span
               key={index}
               className="badge text-white me-3 my-3 flex-wrap"
@@ -49,29 +42,28 @@ function Card(props) {
             className="pb-3"
             style={{ cursor: "pointer" }}
             onClick={() => {
-              Navigate(`/blog/${props.id}`);
+              Navigate(`/blog/${id}`);
             }}
           >
-            <h5 className="card-title primary_txt">{props.title}</h5>
+            <h5 className="card-title primary_txt">{card.title}</h5>
             <p className="card-text secondary_txt">
-              <div>
-                {props.text.length > 200
-                  ? createMarkup(props.text.slice(0, 200) + " ...")
-                  : createMarkup(props.text)}
+              <div style={{ textIndent: "1rem" }}>
+                {card.discription.length > 200
+                  ? card.discription.slice(0, 200) + " ..."
+                  : card.discription}
               </div>
             </p>
           </div>
           <div className="d-flex flex-row align-items-center">
             <img
-              src={props.userAvatar}
+              src={card.userAvatar}
               className="rounded-circle shadow-4"
               style={{ width: "40px" }}
               alt="Avatar"
             />
             <div className="d-flex flex-column ms-1 flex-wrap">
               <p className="ms-3 mb-0 fs-6 primary_txt">
-                {props.name}{" "}
-                <span className="secondary_txt">- {props.date}</span>
+                {card.name} <span className="secondary_txt">- {card.date}</span>
               </p>
             </div>
           </div>
@@ -105,17 +97,7 @@ function Blog() {
 
       <div className="row row-cols-1 row-cols-lg-3 g-4">
         {currentCards.map((card, index) => (
-          <Card
-            key={index}
-            title={card.title}
-            text={card.text}
-            labels={card.labels}
-            name={card.name}
-            date={card.date}
-            userAvatar={card.userAvatar}
-            cover={card.cover}
-            id={index}
-          />
+          <Card card={card} id={index} />
         ))}
       </div>
 
@@ -131,7 +113,7 @@ function Blog() {
                 onClick={() => setCurrentPage(number)}
                 style={{
                   backgroundColor: currentPage === number ? "#5d5dff" : "white",
-                  color: currentPage === number ? "white" : "black"
+                  color: currentPage === number ? "white" : "black",
                 }}
               >
                 {number}

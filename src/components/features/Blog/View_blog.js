@@ -43,7 +43,7 @@ function View_Blog() {
             height: 300,
             width: 1000,
             objectPosition: "center",
-            borderRadius: "20px"
+            borderRadius: "20px",
           }}
           alt="..."
         />
@@ -59,10 +59,7 @@ function View_Blog() {
           </span>
         ))}
       </div>
-      <div
-        className="mb-5"
-        dangerouslySetInnerHTML={{ __html: card.text }}
-      ></div>
+      {card.text}
     </div>
   );
 }

@@ -29,7 +29,7 @@ function Contact() {
 
   return (
     <div className="container">
-      <p className="fs-1 primary_txt text-center">
+      <p className="fs-1">
         <strong>How can I help you?</strong>
       </p>
       <p className={`secondary_txt fs-5 ${styles.justify_txt}`}>

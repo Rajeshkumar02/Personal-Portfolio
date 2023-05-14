@@ -23,3 +23,26 @@
 .image_container:hover img {
   transform: scale(1.2);
 }
+
+.sub_heading {
+  color: var(--text-100);
+  font-weight: bold;
+}
+
+ol li {
+  color: var(--text-200);
+  text-align: justify;
+  margin-bottom: 10px;
+}
+
+.paragraph_txt {
+  color: var(--text-200);
+  padding-left: 1rem;
+  text-align: justify;
+}
+
+.highlight_txt {
+  color: var(--text-100);
+  background-color: var(--primary-100);
+  border-radius: 5px;
+}
