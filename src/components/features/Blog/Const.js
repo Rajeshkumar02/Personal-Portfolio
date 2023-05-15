@@ -1,10 +1,10 @@
 import Fake_review_detection from "./Fake_Review";
-import cover from "./Fake_Review/Fake_review.jpg";
+import fake_review from "../../assests/image/Project/Fake_review.jpg";
 import raj from "../../assests/image/Raj_S.png";
 
 const cards = [
   {
-    cover: cover,
+    cover: fake_review,
     title: "Fake Review Detection using Machine Learning",
     text: <Fake_review_detection />,
     labels: ["React Js", "ML"],
