@@ -1,6 +1,5 @@
 import developer from "../../assests/gif/developer.gif";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
 import styles from "./about.module.css";
 import {
   java,
@@ -50,6 +49,24 @@ function About() {
       location: "Ponnu Matric Higher Secondary School, Dharapuram",
       duration: "2016 - 2017",
       details: ["Percentage: 90.2%"],
+    },
+  ];
+
+  const workDetails = [
+    {
+      title: "Full-stack developer - Intern",
+      name: "KPR Info Solution ",
+      duration: "01-06-2023 - Present",
+    },
+    {
+      title: "Web Developer - Intern",
+      name: "The Sparks Foundation",
+      duration: "17-06-2021 - 16-07-2021",
+    },
+    {
+      title: "Web Developer - Intern",
+      name: "UCFER",
+      duration: "15-05-2021 - 14-06-2021",
     },
   ];
 
@@ -107,7 +124,6 @@ function About() {
     pageNumbers.push(i);
   }
 
-  const navigate = useNavigate();
   return (
     <div className="container">
       <p className="primary_txt fs-1 mt-2">
@@ -190,6 +206,21 @@ function About() {
                   </li>
                 ))}
               </ul>
+            </div>
+          </div>
+        ))}
+      </div>
+      <hr className="mt-4 " />
+      <p className="primary_txt fs-1 mt-4">
+        <strong>Work Detials</strong>
+      </p>
+      <div className={styles.timeline}>
+        {workDetails.map((education, index) => (
+          <div key={index} className={styles.timeline_item}>
+            <div className={styles.timeline_content}>
+              <h4 className="fs-3 primary_txt">{education.title}</h4>
+              <p className="primary_txt">{education.name}</p>
+              <p className="secondary_txt">{education.duration}</p>
             </div>
           </div>
         ))}
