@@ -9,7 +9,6 @@ import {
   Code,
   Smartphone,
   Cloud,
-  Shield,
   LucideIcon,
 } from "lucide-react";
 

@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
 import { Code, GraduationCap, Heart, Briefcase } from "lucide-react";
-import { PERSONAL_INFO, ABOUT_STATS } from "@/lib/constants";
+import { ABOUT_STATS } from "@/lib/constants";
 
 export function About() {
   const ref = useRef(null);

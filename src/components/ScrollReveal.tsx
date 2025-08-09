@@ -21,26 +21,6 @@ export function ScrollReveal({
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
-  const variants = {
-    hidden: {
-      opacity: 0,
-      ...(direction === "up" && { y: 50 }),
-      ...(direction === "down" && { y: -50 }),
-      ...(direction === "left" && { x: 50 }),
-      ...(direction === "right" && { x: -50 }),
-    },
-    visible: {
-      opacity: 1,
-      x: 0,
-      y: 0,
-      transition: {
-        duration,
-        delay,
-        ease: "easeOut",
-      },
-    },
-  };
-
   return (
     <motion.div
       ref={ref}

@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
-import { Calendar, MapPin, Building, Zap, Code } from "lucide-react";
+import { Calendar, MapPin, Building, Code } from "lucide-react";
 import { EXPERIENCE_DATA } from "@/lib/constants";
 
 export function Experience() {
