@@ -49,7 +49,7 @@ Sent at: ${new Date().toLocaleString()}
 };
 
 export const getAutoReplyTemplate = (data: EmailTemplateData) => {
-  const { name, email, subject, message } = data;
+  const { name, subject, message } = data;
 
   return {
     html: `
