@@ -61,56 +61,62 @@ export function Contact() {
   // Handle form submission
   const handleSubmit = async (
     values: FormValues,
-    { setSubmitting, setStatus, resetForm }: FormikHelpers<FormValues>
+    { setSubmitting, resetForm }: FormikHelpers<FormValues>
   ) => {
     try {
-      setStatus(null);
-      const response = await fetch("/api/contact", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(values),
-      });
-
-      const data = await response.json();
-
-      if (response.ok && data.success) {
-        const successMessage =
-          data.message ||
-          "Message sent successfully! I'll get back to you soon.";
-        setStatus({
-          type: "success",
-          message: successMessage,
+      // Try to use the API route first (works in development and server deployments)
+      try {
+        const response = await fetch("/api/contact", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(values),
         });
+
+        if (response.ok) {
+          const data = await response.json();
+          if (data.success) {
+            setToast({
+              type: "success",
+              message:
+                data.message ||
+                "Message sent successfully! I'll get back to you soon.",
+            });
+            resetForm();
+            return;
+          }
+        }
+
+        // If API fails, throw error to trigger fallback
+        throw new Error("API not available");
+      } catch (apiError) {
+        console.log("API not available, using fallback method");
+
+        // Fallback: Open email client with pre-filled content
+        const subject = encodeURIComponent(values.subject);
+        const body = encodeURIComponent(
+          `Hi Rajeshkumar,\n\nName: ${values.name}\nEmail: ${values.email}\n\nMessage:\n${values.message}\n\nBest regards,\n${values.name}`
+        );
+        const mailtoLink = `mailto:${CONTACT_INFO.email}?subject=${subject}&body=${body}`;
+
+        // Show success message and open email client
         setToast({
           type: "success",
-          message: successMessage,
+          message:
+            "Opening your email client to send the message. Please send the pre-filled email.",
         });
+
+        // Reset form and open email client
         resetForm();
-      } else {
-        const errorMessage =
-          data.message || "Failed to send message. Please try again.";
-        setStatus({
-          type: "error",
-          message: errorMessage,
-        });
-        setToast({
-          type: "error",
-          message: errorMessage,
-        });
+        window.open(mailtoLink, "_blank");
       }
     } catch (error) {
       console.error("Contact form error:", error);
-      const errorMessage =
-        "Failed to send message. Please check your connection and try again.";
-      setStatus({
-        type: "error",
-        message: errorMessage,
-      });
       setToast({
         type: "error",
-        message: errorMessage,
+        message:
+          "Something went wrong. Please try again or contact me directly.",
       });
     } finally {
       setSubmitting(false);
@@ -255,38 +261,8 @@ export function Contact() {
                 validationSchema={validationSchema}
                 onSubmit={handleSubmit}
               >
-                {({ isSubmitting, status }) => (
+                {({ isSubmitting }) => (
                   <Form className="space-y-4 sm:space-y-6">
-                    {/* Status Message */}
-                    {status && (
-                      <motion.div
-                        initial={{ opacity: 0, y: -10, scale: 0.95 }}
-                        animate={{ opacity: 1, y: 0, scale: 1 }}
-                        exit={{ opacity: 0, y: -10, scale: 0.95 }}
-                        className={`p-4 rounded-lg flex items-center gap-3 shadow-lg border-2 ${
-                          status.type === "success"
-                            ? "bg-green-50 border-green-300 text-green-800 dark:bg-green-900/40 dark:border-green-600 dark:text-green-200"
-                            : "bg-red-50 border-red-300 text-red-800 dark:bg-red-900/40 dark:border-red-600 dark:text-red-200"
-                        }`}
-                      >
-                        {status.type === "success" ? (
-                          <div className="flex-shrink-0 w-6 h-6 bg-green-500 rounded-full flex items-center justify-center">
-                            <CheckCircle className="w-4 h-4 text-white" />
-                          </div>
-                        ) : (
-                          <div className="flex-shrink-0 w-6 h-6 bg-red-500 rounded-full flex items-center justify-center">
-                            <AlertCircle className="w-4 h-4 text-white" />
-                          </div>
-                        )}
-                        <div className="flex-1">
-                          <p className="font-medium text-sm">
-                            {status.type === "success" ? "Success!" : "Error"}
-                          </p>
-                          <p className="text-sm opacity-90">{status.message}</p>
-                        </div>
-                      </motion.div>
-                    )}
-
                     <div className="grid sm:grid-cols-2 gap-4">
                       <motion.div
                         initial={{ opacity: 0, y: 20 }}
