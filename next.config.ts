@@ -1,18 +1,12 @@
 import type { NextConfig } from "next";
 
-// Check if we want static export (for platforms like Vercel static)
-const isStaticExport = process.env.STATIC_EXPORT === "true";
-
 const nextConfig: NextConfig = {
-  // Only use static export if explicitly set
-  ...(isStaticExport && {
-    output: "export",
-    distDir: "build",
-    trailingSlash: true,
-  }),
-
+  // Remove static export - let Vercel handle deployment automatically
+  // output: "export", // Enable static export
+  // distDir: "build", // Output to 'build' directory instead of '.next'
+  // trailingSlash: true, // Add trailing slashes to URLs
   images: {
-    unoptimized: isStaticExport, // Only unoptimize for static export
+    unoptimized: false, // Vercel supports image optimization
   },
 
   // Add environment variables for build-time configuration
