@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+    <!-- Background -->
+    <rect width="200" height="200" rx="20" fill="#FFFFFF" stroke="#E5E7EB" stroke-width="2" />
+
+    <!-- Gradient Definition -->
+    <defs>
+        <linearGradient id="orangeGradient" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#FFD580" /> <!-- Light Orange -->
+            <stop offset="50%" stop-color="#FFA500" /> <!-- Medium Orange -->
+            <stop offset="100%" stop-color="#FF8C00" /> <!-- Dark Orange -->
+        </linearGradient>
+    </defs>
+
+    <!-- Shield Shape with Gradient Outline -->
+    <path d="M100 30 L150 50 V100 C150 140 125 165 100 170 C75 165 50 140 50 100 V50 Z"
+        fill="none" stroke="url(#orangeGradient)" stroke-width="6" stroke-linejoin="round" />
+
+    <!-- Code Symbol with Gradient -->
+    <text x="100" y="105" font-family="Fira Code, monospace" font-size="36" font-weight="bold"
+        fill="url(#orangeGradient)" text-anchor="middle" alignment-baseline="middle">&lt;/&gt;</text>
+</svg>
