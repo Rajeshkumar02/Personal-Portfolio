@@ -253,8 +253,8 @@ export const EXPERIENCE_DATA = [
     description:
       "Enhanced expertise in modern technologies including Next.js, Kafka, and Redis while working on tax form–related enterprise projects. Contributed to the development of a live Chrome extension and strengthened skills in error handling and debugging.",
     achievements: [
-      "Received the “ShiningStar” award within three months of joining.",
-      "Received the “SuperStar” award within eight months for exceptional performance.",
+      "Received the “ShiningStar” award.",
+      "Received the “SuperStar” award for exceptional performance.",
       "Improved error handling processes and debugging efficiency.",
       "Developed and deployed a live Chrome extension used in production.",
     ],
