@@ -41,7 +41,8 @@ export function JsonLd() {
       "@type": "Person",
       name: "Rajeshkumar S",
     },
-    description: "A professional portfolio built with Next.js and Tailwind CSS.",
+    description:
+      "A professional portfolio built with Next.js and Tailwind CSS.",
     codeRepository: "https://github.com/Rajeshkumar02/Personal-Portfolio",
     programmingLanguage: ["TypeScript", "React", "Next.js"],
   };

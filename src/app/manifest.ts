@@ -4,7 +4,8 @@ export default function manifest(): MetadataRoute.Manifest {
   return {
     name: "Rajeshkumar S Portfolio",
     short_name: "Rajesh Portfolio",
-    description: "Full Stack Developer Portfolio - React, Next.js & AI Engineer",
+    description:
+      "Full Stack Developer Portfolio - React, Next.js & AI Engineer",
     start_url: "/",
     display: "standalone",
     background_color: "#ffffff",

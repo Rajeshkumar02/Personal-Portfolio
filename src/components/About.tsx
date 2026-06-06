@@ -71,10 +71,10 @@ export function About() {
             <div className="space-y-4">
               <p className="text-muted-foreground text-base sm:text-lg leading-relaxed">
                 I'm a dedicated Software Developer with a Bachelor's degree in
-                Engineering and over {YEARS_OF_EXPERIENCE} years of hands-on experience in the tech
-                industry. My journey spans across two dynamic companies where
-                I've honed my skills in building scalable, user-centric
-                applications.
+                Engineering and over {YEARS_OF_EXPERIENCE} years of hands-on
+                experience in the tech industry. My journey spans across two
+                dynamic companies where I've honed my skills in building
+                scalable, user-centric applications.
               </p>
 
               <p className="text-muted-foreground text-base sm:text-lg leading-relaxed">

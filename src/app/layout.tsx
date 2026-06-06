@@ -39,7 +39,8 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: "https://rajeshkumar.is-a.dev",
-    title: "Rajeshkumar S | Full Stack Developer | React, Next.js & AI Engineer",
+    title:
+      "Rajeshkumar S | Full Stack Developer | React, Next.js & AI Engineer",
     description:
       "Full Stack Developer specializing in React, Next.js, Node.js, AI integrations, and scalable web applications.",
     siteName: "Rajeshkumar S Portfolio",
@@ -54,7 +55,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Rajeshkumar S | Full Stack Developer | React, Next.js & AI Engineer",
+    title:
+      "Rajeshkumar S | Full Stack Developer | React, Next.js & AI Engineer",
     description:
       "Full Stack Developer specializing in React, Next.js, Node.js, AI integrations, and scalable web applications.",
     images: ["/og-image.png"],
