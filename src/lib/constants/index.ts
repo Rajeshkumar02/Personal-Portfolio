@@ -15,10 +15,10 @@ import {
 // Personal Information
 export const PERSONAL_INFO = {
   name: "Rajeshkumar S",
-  title: "Software Engineer",
+  title: "Product Engineer",
   description:
-    "Passionate Software Engineer crafting innovative digital solutions with modern technologies.",
-  tagline: "Let's build something amazing together.",
+    "Product Engineer specializing in architecting scalable web systems that drive business value and exceptional user experiences.",
+  tagline: "Bridging the gap between technical excellence and business impact.",
   location: "TamilNadu, India",
   email: "dev.rajeshkumar.s@gmail.com",
   phone: "+91 97868 14641",
@@ -33,6 +33,20 @@ export const CONTACT_INFO = {
   address: "TamilNadu, Coimbatore, India",
   timezone: "Asia/Kolkata",
 };
+
+// Calculate Experience
+const calculateExperience = () => {
+  const startDate = new Date(2023, 7); // August 2023 (Month is 0-indexed)
+  const today = new Date();
+  let years = today.getFullYear() - startDate.getFullYear();
+  const m = today.getMonth() - startDate.getMonth();
+  if (m < 0 || (m === 0 && today.getDate() < startDate.getDate())) {
+    years--;
+  }
+  return years;
+};
+
+export const YEARS_OF_EXPERIENCE = calculateExperience();
 
 // Social Media Links
 export const SOCIAL_LINKS = [
@@ -384,7 +398,7 @@ export const PROJECTS_DATA = [
 
 // About Stats
 export const ABOUT_STATS = [
-  { label: "Years Experience", value: "2+" },
+  { label: "Years Experience", value: `${YEARS_OF_EXPERIENCE}+` },
   { label: "Projects Completed", value: "10+" },
   { label: "Education", value: "B.E." },
   { label: "Companies Worked", value: "2" },
@@ -431,7 +445,7 @@ export const COMMAND_LINES = [
   "> cat skills.txt",
   "Next.js • React • TypeScript • Node.js • Python",
   "> ls experience/",
-  "5+ years of building scalable applications",
+  `${YEARS_OF_EXPERIENCE}+ years of building scalable applications`,
   '> echo "Welcome to my portfolio"',
   "Welcome to my portfolio",
   "> _",
